@@ -455,6 +455,7 @@ __metadata:
     "@rollup/plugin-json": ^6.0.0
     "@rollup/plugin-node-resolve": ^15.1.0
     "@rollup/plugin-typescript": ^11.1.1
+    redom: ^3.29.1
     rollup: ^3.23.0
     rollup-plugin-serve: ^2.0.2
     rollup-plugin-userscript-metablock: ^0.3.3
@@ -1473,6 +1474,13 @@ __metadata:
     string_decoder: ^1.1.1
     util-deprecate: ^1.0.1
   checksum: bdcbe6c22e846b6af075e32cf8f4751c2576238c5043169a1c221c92ee2878458a816a4ea33f4c67623c0b6827c8a400409bfb3cf0bf3381392d0b1dfb52ac8d
+  languageName: node
+  linkType: hard
+
+"redom@npm:^3.29.1":
+  version: 3.29.1
+  resolution: "redom@npm:3.29.1"
+  checksum: af89eb068dcdcb1124a4605ea306a38f52faaef461e5ed89bea921219496ab50d9425cb975daf644e88694a3b60eb9cc32a379a0dca31a0c986ab18be259376a
   languageName: node
   linkType: hard
 
