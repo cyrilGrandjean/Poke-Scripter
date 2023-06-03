@@ -1,0 +1,11 @@
+{
+  "namespace": "github.com/cyrilGrandjean",
+  "copyright": "2023",
+  "require": [
+  ],
+  "match": [
+    "https://github.com/cyrilGrandjean/userscript-template/*"
+  ],
+  "grant": [
+  ]
+}
