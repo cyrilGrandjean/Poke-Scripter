@@ -445,6 +445,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"Poke-Scripter@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "Poke-Scripter@workspace:."
+  dependencies:
+    "@babel/core": ^7.22.1
+    "@rollup/plugin-babel": ^6.0.3
+    "@rollup/plugin-commonjs": ^25.0.0
+    "@rollup/plugin-json": ^6.0.0
+    "@rollup/plugin-node-resolve": ^15.1.0
+    "@rollup/plugin-typescript": ^11.1.1
+    rollup: ^3.23.0
+    rollup-plugin-serve: ^2.0.2
+    rollup-plugin-userscript-metablock: ^0.3.3
+    tslib: ^2.5.2
+    typescript: ^5.0.4
+  languageName: unknown
+  linkType: soft
+
 "abbrev@npm:^1.0.0":
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
@@ -1765,24 +1783,6 @@ __metadata:
   checksum: b98327518f9a345c7cad5437afae4d2ae7d865f9779554baf2a200fdf4bac4969076b679b1115434bd6557376bdd37ca7583d0f9b8f8e302d7d4cc1e91b5f231
   languageName: node
   linkType: hard
-
-"userscript-template@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "userscript-template@workspace:."
-  dependencies:
-    "@babel/core": ^7.22.1
-    "@rollup/plugin-babel": ^6.0.3
-    "@rollup/plugin-commonjs": ^25.0.0
-    "@rollup/plugin-json": ^6.0.0
-    "@rollup/plugin-node-resolve": ^15.1.0
-    "@rollup/plugin-typescript": ^11.1.1
-    rollup: ^3.23.0
-    rollup-plugin-serve: ^2.0.2
-    rollup-plugin-userscript-metablock: ^0.3.3
-    tslib: ^2.5.2
-    typescript: ^5.0.4
-  languageName: unknown
-  linkType: soft
 
 "util-deprecate@npm:^1.0.1":
   version: 1.0.2

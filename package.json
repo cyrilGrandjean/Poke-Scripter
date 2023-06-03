@@ -1,18 +1,18 @@
 {
-  "name": "userscript-template",
+  "name": "Poke-Scripter",
   "version": "1.0.0",
-  "description": "description",
+  "description": "Userscript for the site pokeclicker",
   "main": "src/main.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cyrilGrandjean/userscript-template.git"
+    "url": "git+https://github.com/cyrilGrandjean/Poke-Scripter.git"
   },
   "author": "cyrilGrandjean",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cyrilGrandjean/userscript-template/issues"
+    "url": "https://github.com/cyrilGrandjean/Poke-Scripter/issues"
   },
-  "homepage": "https://github.com/cyrilGrandjean/userscript-template#readme",
+  "homepage": "https://github.com/cyrilGrandjean/Poke-Scripter#readme",
   "scripts": {
     "build": " NODE_ENV=prod rollup --config rollup.config.mjs",
     "build:release": " NODE_ENV=prod rollup --config rollup.config.mjs --sourcemap 0 --file dist/${npm_package_name}.user.js",

@@ -4,7 +4,7 @@
   "require": [
   ],
   "match": [
-    "https://github.com/cyrilGrandjean/userscript-template/*"
+    "https://www.pokeclicker.com/*"
   ],
   "grant": [
   ]
