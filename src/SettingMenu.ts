@@ -2,6 +2,7 @@ import {el} from 'redom';
 
 export class PokeScripterModal {
     private ModalSettingId = 'pokeScripterModal'
+
     private addSettingToMenu() {
         const aMenu = el('a', 'Poke-Scripter');
         aMenu.href = '#' + this.ModalSettingId;
@@ -15,6 +16,7 @@ export class PokeScripterModal {
         this.addSettingToMenu();
         document.body.appendChild(this.createModal());
     }
+
     private createModal() {
         const divModalContent = el('div');
         divModalContent.className = 'modal-content';
@@ -33,18 +35,32 @@ export class PokeScripterModal {
         divModal.setAttribute('aria-hidden', 'true');
         return divModal;
     }
+
     private createModalHeader() {
+        const titleModal = el('h5', 'Poke-Scripter Settings');
+        titleModal.className = 'modal-title';
+        const spanCloseButton = el('span', 'x')
+        spanCloseButton.setAttribute('aria-hidden', 'true');
+        const closeButton = el('button', spanCloseButton);
+        closeButton.type = 'button';
+        closeButton.className = 'close';
+        closeButton.setAttribute('data-dismiss', 'modal');
+        closeButton.setAttribute('aria-lavel', 'Close');
         const div = el('div');
+        div.appendChild(titleModal);
+        div.appendChild(closeButton);
         div.className = 'modal-header';
         return div
     }
+
     private createModalBody() {
         const div = el('div');
         div.className = 'modal-body';
         return div
     }
+
     private createModalFooter() {
-        const button = el('button','Close');
+        const button = el('button', 'Close');
         button.type = 'button';
         button.className = 'btn btn-primary';
         button.setAttribute('data-dismiss', 'modal');
