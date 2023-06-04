@@ -56,6 +56,7 @@ export class PokeScripterModal {
     private createModalBody() {
         const div = el('div');
         div.className = 'modal-body';
+        div.appendChild(this.createToggleButton());
         return div
     }
 
@@ -67,5 +68,20 @@ export class PokeScripterModal {
         const div = el('div', button);
         div.className = 'modal-footer';
         return div;
+    }
+
+    private createToggleButton() {
+        const divToggleKnob = el('div');
+        divToggleKnob.className = 'toggler-knob';
+        const divToggleSlider = el('div', divToggleKnob);
+        divToggleSlider.className = 'toggler-slider';
+        const inputCheckbox = el('input');
+        inputCheckbox.className = 'clickable';
+        inputCheckbox.type = 'checkbox';
+        const labelInput = el('label');
+        labelInput.className = 'form-check-label toggler-wrapper style-1 m-auto';
+        labelInput.appendChild(inputCheckbox);
+        labelInput.appendChild(divToggleSlider);
+        return labelInput;
     }
 }
