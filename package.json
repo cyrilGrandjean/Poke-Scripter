@@ -30,5 +30,8 @@
     "rollup-plugin-userscript-metablock": "^0.3.3",
     "tslib": "^2.5.2",
     "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "redom": "^3.29.1"
   }
 }
