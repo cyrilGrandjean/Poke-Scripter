@@ -9,12 +9,10 @@
     "noImplicitAny": false,
     "removeComments": false,
     "resolveJsonModule": true,
-    "target": "ES2020"
+    "target": "ES2020",
+    "typeRoots": ["types", "node_module/@types"]
   },
   "exclude": [
     "node_modules"
-  ],
-  "include": [
-    "./src/*.ts"
   ]
 }

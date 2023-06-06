@@ -1,0 +1,6 @@
+export * from './autobattle'
+export * from './autobreed'
+export * from './autodungeon'
+export * from './autofarm'
+export * from './autogym'
+export * from './automove'
