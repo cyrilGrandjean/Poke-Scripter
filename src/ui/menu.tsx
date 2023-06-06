@@ -1,7 +1,7 @@
 import React from 'preact/compat';
-import {OptionRow, OptionRowProps} from './optionRow';
+import {OptionRow, OptionUI} from './optionRow';
 export interface MenuProps {
-    options: OptionRowProps[]
+    options: OptionUI[]
 }
 export function Menu(props: MenuProps) {
     return <div id="pokeScripterSetting" className="card sortable border-secondary mb-3">
@@ -18,7 +18,7 @@ export function Menu(props: MenuProps) {
                 </thead>
                 <tbody id="pokeballFilters">
                 {props.options.map(option => (
-                    <OptionRow name={option.name}/>
+                    <OptionRow option={option}/>
                 ))}
                 </tbody>
             </table>
