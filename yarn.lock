@@ -107,7 +107,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-module-imports@npm:^7.18.6, @babel/helper-module-imports@npm:^7.21.4":
+"@babel/helper-module-imports@npm:^7.21.4":
   version: 7.21.4
   resolution: "@babel/helper-module-imports@npm:7.21.4"
   dependencies:
@@ -318,25 +318,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-babel@npm:^6.0.3":
-  version: 6.0.3
-  resolution: "@rollup/plugin-babel@npm:6.0.3"
-  dependencies:
-    "@babel/helper-module-imports": ^7.18.6
-    "@rollup/pluginutils": ^5.0.1
-  peerDependencies:
-    "@babel/core": ^7.0.0
-    "@types/babel__core": ^7.1.9
-    rollup: ^1.20.0||^2.0.0||^3.0.0
-  peerDependenciesMeta:
-    "@types/babel__core":
-      optional: true
-    rollup:
-      optional: true
-  checksum: 412c1c3bb5dd029cbf0b37315ad54b51ef378b8d2fd91d1ec44d73cade723cec8718b5affa2ce8a8b06660710d11765056fac4068521f18737ce26142506a8b1
-  languageName: node
-  linkType: hard
-
 "@rollup/plugin-commonjs@npm:^25.0.0":
   version: 25.0.0
   resolution: "@rollup/plugin-commonjs@npm:25.0.0"
@@ -450,12 +431,11 @@ __metadata:
   resolution: "Poke-Scripter@workspace:."
   dependencies:
     "@babel/core": ^7.22.1
-    "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^25.0.0
     "@rollup/plugin-json": ^6.0.0
     "@rollup/plugin-node-resolve": ^15.1.0
     "@rollup/plugin-typescript": ^11.1.1
-    redom: ^3.29.1
+    preact: ^10.15.1
     rollup: ^3.23.0
     rollup-plugin-serve: ^2.0.2
     rollup-plugin-userscript-metablock: ^0.3.3
@@ -1449,6 +1429,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"preact@npm:^10.15.1":
+  version: 10.15.1
+  resolution: "preact@npm:10.15.1"
+  checksum: dabad11843b19b40b11846a25ff0b1fc4bc58268909e01a7faddb341a40983d24fbe7d44ad6e2c5d35e43091963af616800552fec9af44dd0a2f0f698d1bba1f
+  languageName: node
+  linkType: hard
+
 "promise-inflight@npm:^1.0.1":
   version: 1.0.1
   resolution: "promise-inflight@npm:1.0.1"
@@ -1474,13 +1461,6 @@ __metadata:
     string_decoder: ^1.1.1
     util-deprecate: ^1.0.1
   checksum: bdcbe6c22e846b6af075e32cf8f4751c2576238c5043169a1c221c92ee2878458a816a4ea33f4c67623c0b6827c8a400409bfb3cf0bf3381392d0b1dfb52ac8d
-  languageName: node
-  linkType: hard
-
-"redom@npm:^3.29.1":
-  version: 3.29.1
-  resolution: "redom@npm:3.29.1"
-  checksum: af89eb068dcdcb1124a4605ea306a38f52faaef461e5ed89bea921219496ab50d9425cb975daf644e88694a3b60eb9cc32a379a0dca31a0c986ab18be259376a
   languageName: node
   linkType: hard
 
