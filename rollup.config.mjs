@@ -2,7 +2,6 @@ import serve from "rollup-plugin-serve";
 import metablock from "rollup-plugin-userscript-metablock";
 import pkg from "./package.json" assert {type: "json"};
 import meta from "./meta.json" assert {type: "json"};
-import babel from "@rollup/plugin-babel";
 import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
 import typescriptPlugin from "@rollup/plugin-typescript";
@@ -55,9 +54,6 @@ export default function () {
     }
     // Plugin options
     defaultConfig.plugins = [];
-    defaultConfig.plugins.push(
-        babel({babelHelpers: 'bundled'})
-    );
     defaultConfig.plugins.push(
         commonjs({
             include: [
