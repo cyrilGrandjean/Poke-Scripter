@@ -1,8 +1,7 @@
 
 import { version } from '../package.json';
 import {render} from 'preact';
-import {Menu, MenuProps} from './ui/menu';
-import {OptionRowProps} from './ui/optionRow';
+import {Menu} from './ui/menu';
 
 console.log('Userscript-template: ' + version);
 const test = [{name: 'test'}, {name: 'test2'}, {name: 'test3'}, {name: 'test4'}, {name: 'test5'}];
