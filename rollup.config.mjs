@@ -31,26 +31,16 @@ export default function () {
     const defaultConfig = {};
 
     // Input options
-    if (isProduction) {
-        defaultConfig.input = 'src/main.ts';
-    } else {
-        defaultConfig.input = {
-            dev: 'src/main.ts',
-            update: 'update-script.ts'
-        };
-    }
+    defaultConfig.input = 'src/main.ts';
     // Output options
+    defaultConfig.output = {
+        format: 'iife',
+        banner: () => ('\n/*\n' + fs.readFileSync('./LICENSE', 'utf8') + '*/\n')
+    };
     if (isProduction) {
-        defaultConfig.output = {
-            file: 'dist/bundle.user.js',
-            format: 'iife',
-            banner: () => ('\n/*\n' + fs.readFileSync('./LICENSE', 'utf8') + '*/\n')
-        };
+        defaultConfig.output.file = 'dist/bundle.user.js';
     } else {
-        defaultConfig.output = {
-            entryFileNames: '[name].user.js',
-            dir: 'dist',
-        };
+        defaultConfig.output.file = 'dist/dev.user.js';
     }
     // Plugin options
     defaultConfig.plugins = [];
@@ -71,7 +61,7 @@ export default function () {
         typescriptPlugin({typescript})
     );
     const metadata = {
-        name: pkg.name + '-dev',
+        name: pkg.name,
         version: pkg.version,
         description: pkg.description,
         homepage: pkg.homepage,
@@ -79,7 +69,7 @@ export default function () {
         license: pkg.license,
     };
     if (!isProduction) {
-        metadata.downloadURL = `http://${host}:${port}/dev.user.js`;
+        metadata.name += '-dev';
         metadata.grant = generateGrant();
     }
     defaultConfig.plugins.push(
@@ -99,7 +89,7 @@ export default function () {
                 host: host,
                 port: port,
                 open: true,
-                openPage: '/update.user.js'
+                openPage: '/dev.user.js'
             })
         );
     }
