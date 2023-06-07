@@ -8,7 +8,7 @@ export function Menu(props: MenuProps) {
         <div className="card-header p-0" data-toggle="collapse" href="#pokeScripterSettingBody">
             <span>Poké-Scripter</span>
         </div>
-        <div id="pokeScripterSettingBody" className="card-body p-0 table-responsive">
+        <div id="pokeScripterSettingBody" className="card-body p-0 table-responsive collapse show">
             <table className="table table-sm m-0">
                 <thead>
                 <tr>
