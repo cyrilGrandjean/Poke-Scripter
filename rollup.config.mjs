@@ -71,7 +71,7 @@ export default function () {
         typescriptPlugin({typescript})
     );
     const metadata = {
-        name: pkg.name,
+        name: pkg.name + '-dev',
         version: pkg.version,
         description: pkg.description,
         homepage: pkg.homepage,
