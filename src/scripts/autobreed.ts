@@ -10,16 +10,23 @@ export class AutoBreed extends Action {
     this.observableEggSteps = [];
   }
   start(): void {
-    App.game.breeding.eggList.forEach((egg, idx) => {
+    App.game.breeding.eggList.forEach((koEgg, idx) => {
       this.observableEggSlots.push(
-          egg.subscribe((data) => {
-            if (!data.isNone()) {
-              this.observableEggSteps[idx]?.dispose();
-              this.observableEggSteps[idx] = this.subscribeStep(data, idx);
+          koEgg.subscribe((egg) => {
+            if (egg.canHatch()) {
+              App.game.breeding.hatchPokemonEgg(idx);
+            } else {
+              if (!egg.isNone()) {
+                this.observableEggSteps[idx]?.dispose();
+                this.observableEggSteps[idx] = this.subscribeStep(egg, idx);
+              }
             }
           })
       )
     });
+    while (App.game.breeding.eggList[0]().canHatch()) {
+      App.game.breeding.hatchPokemonEgg(0)
+    }
     if (App.game.breeding.hasFreeEggSlot()) {
       this.addPokemonToHatchery();
     }
