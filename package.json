@@ -1,6 +1,6 @@
 {
   "name": "Poke-Scripter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Userscript for the site pokeclicker",
   "main": "src/main.ts",
   "repository": {
