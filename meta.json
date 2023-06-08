@@ -1,7 +1,6 @@
 {
   "namespace": "github.com/cyrilGrandjean",
   "copyright": "2023",
-  "downloadURL": "https://github.com/cyrilGrandjean/Poke-Scripter/releases/latest/download/Poke-Scripter.user.js",
   "require": [
   ],
   "match": [

@@ -12,18 +12,11 @@ import nodeResolve from "@rollup/plugin-node-resolve";
 const host = 'localhost';
 const port = 5000;
 
-
-const generateGrant = () => {
-    const grantResult = meta.grant;
-    [
-        "GM.info",
-        "GM.xmlhttpRequest"
-    ].forEach((item) => {
-        if (!grantResult.includes(item)) {
-            grantResult.push(item);
-        }
-    })
-    return grantResult;
+const generateDownloadUrl = () => {
+    if (!meta.downloadURL) {
+        return pkg.homepage.replace('#readme', `/releases/latest/download/${pkg.name}.user.js`);
+    }
+    return meta.downloadURL;
 }
 
 export default function () {
@@ -70,7 +63,8 @@ export default function () {
     };
     if (!isProduction) {
         metadata.name += '-dev';
-        metadata.grant = generateGrant();
+    } else {
+        metadata.downloadURL = generateDownloadUrl();
     }
     defaultConfig.plugins.push(
         metablock({
