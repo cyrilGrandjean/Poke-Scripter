@@ -37,7 +37,9 @@ export class AutoDungeon extends Action {
     this.dungeonStartedSub = DungeonRunner.dungeonFinished.subscribe((value) => {
       value ? this.dungeonStopped() : this.dungeonStarted();
     });
-    DungeonRunner.dungeonFinished.notifySubscribers();
+    if (App.game.gameState === GameConstants.GameState.dungeon) {
+      DungeonRunner.dungeonFinished.notifySubscribers();
+    }
   }
 
   protected stop(): void {
@@ -48,8 +50,17 @@ export class AutoDungeon extends Action {
 
   dungeonStarted() {
     // console.info("dungeonStarted", this.freeze());
+    if (DungeonRunner.map === undefined) {
+      // Notifier.notify({
+      //   message: "Not in a dungeon.\nPlease enable Auto Gym to start the dungeon automatically.",
+      //   type: NotificationConstants.NotificationOption.danger,
+      //   timeout: 3e4,
+      // });
+      // return;
+    }
     this.dungeontick = DungeonRunner.tick;
-    DungeonRunner.map.board().forEach((row, y) => {
+    const { floor } = DungeonRunner.map.playerPosition();
+    DungeonRunner.map.board()[floor].forEach((row, y) => {
       row.forEach((tile, x) => {
         if (tile.type() == GameConstants.DungeonTile.boss)
           this.bossTile = new Tile(tile, new Point(x, y));
@@ -107,7 +118,8 @@ export class AutoDungeon extends Action {
     }
   }
   moveTo(type: GameConstants.DungeonTile) {
-    DungeonRunner.map.board().forEach((row, y) => {
+    const { floor } = DungeonRunner.map.playerPosition();
+    DungeonRunner.map.board()[floor].forEach((row, y) => {
       row.forEach((tile, x) => {
         if (tile.type() == type) {
           DungeonRunner.map.moveToCoordinates(x, y);
@@ -118,9 +130,10 @@ export class AutoDungeon extends Action {
   }
 
   unvisitedTiles() {
+    const { floor } = DungeonRunner.map.playerPosition();
     return DungeonRunner.map
       .board()
-      .map((row, y) => {
+      [floor].map((row, y) => {
         return row
           .map((tile, x) => {
             const pos = new Point(x, y);
@@ -141,7 +154,8 @@ export class AutoDungeon extends Action {
     let hasChests = false;
     let hasEnemies = false;
 
-    for (const row of DungeonRunner.map.board()) {
+    const { floor } = DungeonRunner.map.playerPosition();
+    for (const row of DungeonRunner.map.board()[floor]) {
       for (const tile of row) {
         switch (tile.type()) {
           case GameConstants.DungeonTile.chest:
