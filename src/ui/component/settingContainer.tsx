@@ -26,12 +26,6 @@ interface TableSettingContainerProps {
 
 function TableSettingContainer(props: TableSettingContainerProps) {
     return <table className="table table-sm m-0">
-        <thead>
-        <tr>
-            <th>option</th>
-            <th></th>
-        </tr>
-        </thead>
         <tbody id="pokeballFilters">
         {props.options.map(option => (
             <tr>
