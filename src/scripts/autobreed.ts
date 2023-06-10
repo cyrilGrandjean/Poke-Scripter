@@ -15,14 +15,18 @@ export class AutoBreed extends Action {
           koEgg.subscribe((egg) => {
             if (egg.canHatch()) {
               App.game.breeding.hatchPokemonEgg(idx);
-            } else {
-              if (!egg.isNone()) {
-                this.observableEggSteps[idx]?.dispose();
-                this.observableEggSteps[idx] = this.subscribeStep(egg, idx);
-              }
+            }
+            this.observableEggSteps[idx]?.dispose();
+            if (!egg.isNone()) {
+              this.observableEggSteps[idx] = this.subscribeStep(egg, idx);
             }
           })
       );
+
+      this.observableEggSteps[idx]?.dispose();
+      if (!koEgg().isNone()) {
+        this.observableEggSteps[idx] = this.subscribeStep(koEgg(), idx);
+      }
     });
     let hatchIdx: number;
     while (App.game.breeding.eggList.some(
