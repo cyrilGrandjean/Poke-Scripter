@@ -24,8 +24,15 @@ export class AutoBreed extends Action {
           })
       )
     });
-    while (App.game.breeding.eggList[0]().canHatch()) {
-      App.game.breeding.hatchPokemonEgg(0)
+    let hatchIdx: number;
+    while (App.game.breeding.eggList.some(
+        (egg, idx) => {
+          if (egg().canHatch()) {
+            hatchIdx = idx;
+          }
+          return egg().canHatch();
+        })) {
+      App.game.breeding.hatchPokemonEgg(hatchIdx)
     }
     if (App.game.breeding.hasFreeEggSlot()) {
       this.addPokemonToHatchery();
