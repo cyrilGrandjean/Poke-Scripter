@@ -29,10 +29,10 @@ function TableSettingContainer(props: TableSettingContainerProps) {
         <tbody id="pokeballFilters">
         {props.options.map(option => (
             <tr>
-                <td>
-                    <span>{option.description}</span>
+                <td className="p-2">
+                    <span class="m-0">{option.description}</span>
                 </td>
-                <td>
+                <td className="p-2" style="vertical-align: middle;">
                     <label className="form-check-label toggler-wrapper style-1 m-auto">
                         <input className="clickable" type="checkbox" onClick={option.onclick.bind(option)}></input>
                         <div className="toggler-slider">

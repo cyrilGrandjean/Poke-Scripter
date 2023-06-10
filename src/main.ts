@@ -1,7 +1,7 @@
 import {name, version} from '../package.json';
-import {render} from 'preact';
 import {autobattle, autobreed, autodungeon, autofarm, autogym, automove} from './scripts';
 import {OptionUI, SettingContainer, SettingContainerProps} from './ui/component';
+import {renderAndReplace} from './ui/utils';
 
 console.log(`${name}: v${version}`);
 
@@ -19,6 +19,7 @@ const settingContainer = SettingContainer(menuProps);
 const uiCol = document.getElementById('middle-bottom-sort-column');
 const root = document.createElement('div');
 uiCol.appendChild(root);
-render(settingContainer, root);
+renderAndReplace(settingContainer, root);
+
 
 
