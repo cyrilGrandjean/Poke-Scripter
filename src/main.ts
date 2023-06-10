@@ -8,7 +8,7 @@ console.log(`${name}: v${version}`);
 const menuProps: SettingContainerProps = {
     options: []
 }
-menuProps.options.push(new OptionUI("Auto Battle", autobattle))
+menuProps.options.push(new OptionUI("Auto Battle", autobattle, 'test'))
 menuProps.options.push(new OptionUI("Auto Breed", autobreed))
 menuProps.options.push(new OptionUI("Auto Farm", autofarm))
 menuProps.options.push(new OptionUI("Auto Gym", autogym))

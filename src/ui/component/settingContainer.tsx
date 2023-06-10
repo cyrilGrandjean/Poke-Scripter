@@ -4,11 +4,13 @@ import {Action} from '../../base';
 
 export class OptionUI {
     description: string;
+    modalId: string;
     enabled: KnockoutObservable<boolean>;
 
 
-    constructor(description: string, action: Action) {
+    constructor(description: string, action: Action, modalId: string = undefined) {
         this.description = description;
+        this.modalId = modalId;
         this.enabled = action.enabled;
     }
 
@@ -25,11 +27,20 @@ interface TableSettingContainerProps {
 }
 
 function TableSettingContainer(props: TableSettingContainerProps) {
+    const settingsCell = (modalId: string) => {
+        if (modalId != '' && modalId != undefined) {
+            return <img class="clickable" src="assets/images/fa-cog.svg"
+                     style="width: auto; height: 41px; padding: 8px;"
+                     data-toggle="modal"
+                     href={`#${modalId}`}/>
+        }
+    }
+
     return <table className="table table-sm m-0">
         <tbody id="pokeballFilters">
         {props.options.map(option => (
             <tr>
-                <td className="p-2">
+                <td className="p-2" style="vertical-align: middle;">
                     <span class="m-0">{option.description}</span>
                 </td>
                 <td className="p-2" style="vertical-align: middle;">
@@ -39,6 +50,9 @@ function TableSettingContainer(props: TableSettingContainerProps) {
                             <div className="toggler-knob"></div>
                         </div>
                     </label>
+                </td>
+                <td  className="p-2" style="vertical-align: middle;">
+                    {settingsCell(option.modalId)}
                 </td>
             </tr>
         ))}
